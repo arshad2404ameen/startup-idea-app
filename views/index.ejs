@@ -1,0 +1,27 @@
+
+// File: views/index.ejs
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IdeaSpark</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-xl mx-auto text-center">
+    <h1 class="text-3xl font-bold mb-4">💡 IdeaSpark</h1>
+    <form action="/generate" method="POST" class="mb-6">
+      <input type="text" name="topic" placeholder="Enter a field (e.g. Health, AI)" class="w-full p-3 rounded border" required>
+      <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Generate Ideas</button>
+    </form>
+    <% if (ideas) { %>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Startup Ideas:</h2>
+        <pre class="text-left whitespace-pre-wrap"><%= ideas %></pre>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
